@@ -1,0 +1,174 @@
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --btn-color: #9cb6ed;
+  --btn-hover: #4a4d89;
+  --online-color: #4CAF50;
+  --offline-color: #f44336;
+  --warning-color: #ff9800;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  color: var(--btn-hover);
+}
+
+#connection-status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.online {
+  background-color: var(--online-color);
+}
+
+.offline {
+  background-color: var(--offline-color);
+}
+
+.note-creator {
+  margin-bottom: 30px;
+}
+
+#note-content {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.btn {
+  background-color: var(--btn-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.warning {
+  color: var(--warning-color);
+  margin-top: 10px;
+  display: none;
+}
+
+.note {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.note-content {
+  margin-bottom: 10px;
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.note-actions .btn {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.delete-btn {
+  background-color: #ff6b6b;
+}
+
+.delete-btn:hover {
+  background-color: #ff5252;
+}
+
+@media (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+  
+  .note-actions {
+      flex-direction: column;
+  }
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.toast.fade-out {
+  opacity: 0;
+}
+
+.note-meta {
+  font-size: 0.8em;
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+#connection-status {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+.note {
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.note.pending-deletion {
+  opacity: 0.6;
+  background-color: #ffeeee;
+}
+
+.note-meta small {
+  color: #666;
+  font-size: 0.8em;
+}
